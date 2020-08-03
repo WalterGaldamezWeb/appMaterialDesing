@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">appMaterialDesing</string>
+    <string name="textoBienvenida">Bienbenido!</string>
+    <string name="loginUsuario">Usuario</string>
+    <string name="loginContrasenia">Contraseña</string>
+    <string name="loginBtn">Login</string>
+</resources>
