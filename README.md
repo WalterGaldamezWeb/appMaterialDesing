@@ -1,5 +1,5 @@
 ## AppMaterialDesing
-Aplicaión android basica utilizando Daterial Desing
+Aplicaión android basica utilizando Material Desing
 
 1. Primary color
 2. Dark Primary Color
