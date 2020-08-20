@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevacionToolbar">4dp</dimen>
+    <dimen name="iconoToolbar">25dp</dimen>
+    <dimen name="margenesCardView">5dp</dimen>
+    <dimen name="alturaImgCardView">200dp</dimen>
+    <dimen name="anchoImgButtomCardView">35dp</dimen>
+    <dimen name="alturaImgButtomCardView">35dp</dimen>
+    <dimen name="margenSuperiorNomMascotaCardView">10dp</dimen>
+    <dimen name="margenSuperiorLikesCardView">10dp</dimen>
+    <dimen name="margenDerechoLikesCardView">10dp</dimen>
+    <dimen name="alturaImgLikesCardView">20dp</dimen>
+    <dimen name="anchoImgLikesCardView">20dp</dimen>
+    <dimen name="margenSuperiorImgLikesCardView">10dp</dimen>
+    <dimen name="margenDerechoImgLikesCardView">10dp</dimen>
+
+</resources>

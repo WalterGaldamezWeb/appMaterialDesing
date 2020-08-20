@@ -1,7 +1,15 @@
 <resources>
-    <string name="app_name">appMaterialDesing</string>
+    <string name="app_name">Petagram</string>
     <string name="textoBienvenida">Bienvenido!</string>
     <string name="loginUsuario">Usuario</string>
     <string name="loginContrasenia">Contraseña</string>
-    <string name="loginBtn">Login</string>
+    <string name="loginBtn">Entrar</string>
+    <string name="cardViewNombre">Catty</string>
+    <string name="cardViewLikes">5</string>
+    <string name="tituloAppBar">Petagram</string>
+    <string name="descriptionIconoToolbar">Imagen Huella</string>
+    <string name="tituloActionViewToolbar">Estrella</string>
+    <string name="itemMenuContacto">Contacto</string>
+    <string name="itemMenuAcercaDe">Acerca De</string>
+    <string name="descripcionImgCardView">Imagen Mascota</string>
 </resources>
