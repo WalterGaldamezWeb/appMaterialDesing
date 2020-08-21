@@ -69,7 +69,7 @@
                         android:id="@+id/iconoDos"
                         android:layout_width="@dimen/anchoImgLikesCardView"
                         android:layout_height="@dimen/alturaImgLikesCardView"
-                        android:src="@drawable/hueso"
+                        android:src="@drawable/hueso_color"
                         android:layout_marginTop="@dimen/margenSuperiorImgLikesCardView"
                         android:layout_marginRight="@dimen/margenDerechoImgLikesCardView"/>
 

@@ -11,7 +11,7 @@
         <ImageView
             android:layout_width="@dimen/iconoToolbar"
             android:layout_height="@dimen/iconoToolbar"
-            android:src="@drawable/huella"
+            android:src="@drawable/huella_color"
             android:contentDescription="@string/descriptionIconoToolbar">
         </ImageView>
         <TextView

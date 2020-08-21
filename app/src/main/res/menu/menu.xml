@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/itemStrella"
-        android:icon="@drawable/estrella"
+        android:icon="@drawable/estrella_color"
         android:title="@string/tituloActionViewToolbar"
         app:showAsAction="ifRoom"/>
 
