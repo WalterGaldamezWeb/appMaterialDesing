@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Contacto">
 
+    <include layout="@layout/app_bar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
