@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,11 +23,15 @@ public class RecyclerViewMascota extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
     public RecyclerView listaMascotas;
     TextView estrella;
+    int contadorLikes;
+    ImageButton btnLike;
+    private String likes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_view_mascota);
+        /*btnLike = (ImageButton) findViewById(R.id.btnLike);*/
         setToolBar();
         listaMascotas = (RecyclerView) findViewById(R.id.rvMascota);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -35,6 +41,14 @@ public class RecyclerViewMascota extends AppCompatActivity {
         inicializarAdaptador();
         //estrella = findViewById(R.id.contadorMascotas);
         //estrella.setText(String.valueOf(totalMascotas()));
+
+
+        /*btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                contadorLikes++;
+            }
+        });*/
     }
 
     @Override
@@ -64,17 +78,18 @@ public class RecyclerViewMascota extends AppCompatActivity {
     }
 
     public void inicializarAdaptador () {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
     public int totalMascotas () {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
         return adaptador.getItemCount();
     }
 
     public void inicializarListaMascotas () {
+        //likes = String.valueOf(contadorLikes);
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","15"));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
         mascotas.add(new Mascota(R.drawable.peludo,"Peludo","2"));
         mascotas.add(new Mascota(R.drawable.labradores,"Labradores","5"));
         mascotas.add(new Mascota(R.drawable.perrote,"Perrote","8"));

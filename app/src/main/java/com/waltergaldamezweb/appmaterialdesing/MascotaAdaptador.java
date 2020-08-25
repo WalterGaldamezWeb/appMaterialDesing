@@ -1,10 +1,14 @@
 package com.waltergaldamezweb.appmaterialdesing;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,9 +19,11 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
 
     ArrayList<Mascota> mascotas;
+    private Activity contexto;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascotas) {
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity contexto) {
         this.mascotas = mascotas;
+        this.contexto = contexto;
     }
 
     //Infla el layout y lo pasa al viewholder para que obtenga los view
@@ -29,11 +35,24 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
     //asocia cada elemento de la lista con cada view
     @Override
-    public void onBindViewHolder(@NonNull MascotaViewHolder holder, int position) {
-        Mascota mascota = mascotas.get(position);
+    public void onBindViewHolder(@NonNull final MascotaViewHolder holder, int position) {
+        final Mascota mascota = mascotas.get(position);
         holder.imgCardView.setImageResource(mascota.getFoto());
         holder.tvNombre.setText(mascota.getNombreMascota());
         holder.tvLikes.setText(mascota.getLikes());
+
+        holder.btnLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int likeRecibidos = Integer.parseInt(mascota.getLikes());
+                int totalLikes = likeRecibidos + 1;
+                mascota.setLikes(String.valueOf(totalLikes));
+                holder.tvLikes.setText(mascota.getLikes());
+                Toast.makeText(contexto,"Like a : " + mascota.getNombreMascota() , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     @Override
@@ -46,6 +65,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private ImageView imgCardView;
         private TextView tvNombre;
         private TextView tvLikes;
+        private ImageButton btnLike;
 
 
         public MascotaViewHolder(@NonNull View itemView) {
@@ -53,6 +73,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             imgCardView = (ImageView) itemView.findViewById(R.id.imgCardView);
             tvNombre = (TextView) itemView.findViewById(R.id.tvNombre);
             tvLikes = (TextView) itemView.findViewById(R.id.tvLikes);
+            btnLike = (ImageButton) itemView.findViewById(R.id.btnLike);
 
         }
     }
