@@ -12,4 +12,10 @@
     <string name="itemMenuContacto">Contacto</string>
     <string name="itemMenuAcercaDe">Acerca De</string>
     <string name="descripcionImgCardView">Imagen Mascota</string>
+    <string name="hintEmail">Ingresa tu Email</string>
+    <string name="hintAsunto">Asunto</string>
+    <string name="hintMensaje">Mensaje</string>
+    <string name="btnEnviarMensaje">Enviar Mensaje</string>
+    <string name="tituloContactForm">Envianos un mensaje, con gusto te contactaremos lo más pronto posible...!</string>
+
 </resources>

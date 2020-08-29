@@ -13,5 +13,8 @@
     <dimen name="anchoImgLikesCardView">20dp</dimen>
     <dimen name="margenSuperiorImgLikesCardView">10dp</dimen>
     <dimen name="margenDerechoImgLikesCardView">10dp</dimen>
+    <dimen name="altoCajaMensaje">200dp</dimen>
+    <dimen name="marginTopTituloForm">20dp</dimen>
+    <dimen name="marginTop_btnMensaje">30dp</dimen>
 
 </resources>
