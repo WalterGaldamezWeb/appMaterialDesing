@@ -50,5 +50,6 @@ public class MainActivity extends AppCompatActivity {
     public void setToolBar(){
         Toolbar appBar = findViewById(R.id.appBar);
         setSupportActionBar(appBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

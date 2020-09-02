@@ -17,5 +17,7 @@
     <string name="hintMensaje">Mensaje</string>
     <string name="btnEnviarMensaje">Enviar Mensaje</string>
     <string name="tituloContactForm">Envianos un mensaje, con gusto te contactaremos lo más pronto posible...!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

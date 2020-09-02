@@ -3,8 +3,10 @@ package com.waltergaldamezweb.appmaterialdesing;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,41 +16,40 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
 import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
 public class RecyclerViewMascota extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
-    public RecyclerView listaMascotas;
+
     TextView estrella;
     int contadorLikes;
     ImageButton btnLike;
     private String likes;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private Toolbar tootlbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_view_mascota);
         /*btnLike = (ImageButton) findViewById(R.id.btnLike);*/
-        setToolBar();
-        listaMascotas = (RecyclerView) findViewById(R.id.rvMascota);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializarAdaptador();
-        //estrella = findViewById(R.id.contadorMascotas);
-        //estrella.setText(String.valueOf(totalMascotas()));
+        tootlbar = findViewById(R.id.toolBar);
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.viewPager);
+        /*setToolBar();*/
+        setUpViewPager();
 
-
-        /*btnLike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                contadorLikes++;
-            }
-        });*/
+        if (tootlbar != null) {
+            setSupportActionBar(tootlbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
     }
 
     @Override
@@ -77,31 +78,24 @@ public class RecyclerViewMascota extends AppCompatActivity {
         }
     }
 
-    public void inicializarAdaptador () {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
-        listaMascotas.setAdapter(adaptador);
-    }
-    public int totalMascotas () {
-        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas,this);
-        return adaptador.getItemCount();
-    }
 
-    public void inicializarListaMascotas () {
-        //likes = String.valueOf(contadorLikes);
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.peludo,"Peludo","2"));
-        mascotas.add(new Mascota(R.drawable.labradores,"Labradores","5"));
-        mascotas.add(new Mascota(R.drawable.perrote,"Perrote","8"));
-        mascotas.add(new Mascota(R.drawable.labrador_adulto,"Labrador Adulto","12"));
-        mascotas.add(new Mascota(R.drawable.gato,"Gato","5"));
-        mascotas.add(new Mascota(R.drawable.manchado,"Manchado","7"));
-        mascotas.add(new Mascota(R.drawable.pitbull,"Pitbull","1"));
-        mascotas.add(new Mascota(R.drawable.leon,"León","8"));
-    }
-    public void setToolBar(){
+    /*public void setToolBar(){
         Toolbar appBar = findViewById(R.id.appBar);
         setSupportActionBar(appBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }*/
+
+    private ArrayList<Fragment> agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new RecyclerView_Fragment());
+        fragments.add(new Perfil_Mascota());
+        return fragments;
+    }
+
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.lista_mascotas);
+        tabLayout.getTabAt(1).setIcon(R.drawable.perfil_mascota);
     }
 }

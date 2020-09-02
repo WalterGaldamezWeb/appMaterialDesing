@@ -30,6 +30,7 @@ public class MascotasFavoritas extends AppCompatActivity {
         Toolbar appBar = findViewById(R.id.appBar);
         setSupportActionBar(appBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     public void inicializarAdaptador () {
