@@ -1,6 +1,5 @@
 ## AppMaterialDesing
-Aplicaión android basica utilizando Material Desing
-Aplicaión de Mascotas
+Aplicaión de mascotas android Material Desing.
 
 #### Primera Versión
 1. Primary color
@@ -13,10 +12,11 @@ Aplicaión de Mascotas
 
 #### Segunda Versión
 8. RecyclerView
-9. TabLayout
-10. ViewPager
-11. CircularView
-12. JavaMail
+9. Fragments
+10. TabLayout
+11. ViewPager
+12. CircularView
+13. JavaMail
 
 ## 🎨 Vista Previa
 
