@@ -58,7 +58,8 @@ public class RecyclerViewMascota extends AppCompatActivity {
                 startActivity(contactoIntent);
                 return true;
             case R.id.itemAcercaDe:
-                Log.i("Dos", "Se presiono Dos");
+                Intent acerca_de_Intent = new Intent(this,AcercaDe.class);
+                startActivity(acerca_de_Intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
