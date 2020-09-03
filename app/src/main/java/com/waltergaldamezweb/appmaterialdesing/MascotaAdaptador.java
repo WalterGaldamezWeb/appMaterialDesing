@@ -67,7 +67,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         private TextView tvLikes;
         private ImageButton btnLike;
 
-
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
             imgCardView = (ImageView) itemView.findViewById(R.id.imgCardView);
