@@ -1,9 +1,13 @@
 package com.waltergaldamezweb.appmaterialdesing.modelo;
 
 public class Mascota {
+    private int id;
     private int foto;
     private String nombreMascota;
     private String likes;
+
+    public Mascota() {
+    }
 
     public Mascota(int foto, String nombreMascota, String likes) {
         this.foto = foto;
@@ -33,5 +37,13 @@ public class Mascota {
 
     public void setLikes(String likes) {
         this.likes = likes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
