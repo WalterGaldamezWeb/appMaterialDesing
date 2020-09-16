@@ -1,4 +1,4 @@
-package com.waltergaldamezweb.appmaterialdesing;
+package com.waltergaldamezweb.appmaterialdesing.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.waltergaldamezweb.appmaterialdesing.R;
+import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
 
 import java.util.ArrayList;
 

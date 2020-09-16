@@ -1,4 +1,4 @@
-package com.waltergaldamezweb.appmaterialdesing;
+package com.waltergaldamezweb.appmaterialdesing.modelo;
 
 public class Mascota {
     private int foto;

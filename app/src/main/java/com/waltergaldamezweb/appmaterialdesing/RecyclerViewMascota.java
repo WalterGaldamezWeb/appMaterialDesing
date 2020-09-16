@@ -8,12 +8,14 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.android.material.tabs.TabLayout;
+import com.waltergaldamezweb.appmaterialdesing.adapter.PageAdapter;
+import com.waltergaldamezweb.appmaterialdesing.vista.fragment.Perfil_Mascota;
+import com.waltergaldamezweb.appmaterialdesing.vista.fragment.RecyclerView_Fragment;
 
 import java.util.ArrayList;
 

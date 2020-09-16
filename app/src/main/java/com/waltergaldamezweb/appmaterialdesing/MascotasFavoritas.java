@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.waltergaldamezweb.appmaterialdesing.adapter.MascotaAdaptador;
+import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
+
 import java.util.ArrayList;
 
 public class MascotasFavoritas extends AppCompatActivity {

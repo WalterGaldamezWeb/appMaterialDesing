@@ -1,4 +1,4 @@
-package com.waltergaldamezweb.appmaterialdesing;
+package com.waltergaldamezweb.appmaterialdesing.vista.fragment;
 
 import android.os.Bundle;
 
@@ -6,13 +6,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.waltergaldamezweb.appmaterialdesing.R;
+import com.waltergaldamezweb.appmaterialdesing.adapter.PerfilAdaptador;
+import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.waltergaldamezweb.appmaterialdesing;
+package com.waltergaldamezweb.appmaterialdesing.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
