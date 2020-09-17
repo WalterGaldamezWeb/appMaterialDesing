@@ -1,10 +1,12 @@
-package com.waltergaldamezweb.appmaterialdesing.database;
+package com.waltergaldamezweb.appmaterialdesing.modelo;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.waltergaldamezweb.appmaterialdesing.database.BaseDatos;
+import com.waltergaldamezweb.appmaterialdesing.database.ConstantesBaseDatos;
 import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
 import com.waltergaldamezweb.appmaterialdesing.R;
 
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 
 public class ConstructorMascotas {
 
+    private static final int LIKE = 1;
     private Context context;
     private ArrayList<Mascota> mascotas;
 
@@ -52,6 +55,19 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Labradores");
         contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.labradores);
         db.insertarMascota(contentValues);
+    }
+
+    public void darLikeMascota (Mascota mascota) {
+        BaseDatos db = new BaseDatos(context);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID_MASCOTA, mascota.getId());
+        contentValues.put(ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_NUMERO_LIKES, LIKE);
+        db.insertarLikesMascota(contentValues);
+    }
+
+    public int obtenerLikesMascota (Mascota mascota) {
+        BaseDatos db = new BaseDatos(context);
+        return db.obtenerLikesMascotas(mascota);
     }
 
 }

@@ -28,12 +28,12 @@ public class BaseDatos extends SQLiteOpenHelper {
                 ConstantesBaseDatos.TABLA_MASCOTAS_FOTO + " INTEGER " +
                 ")";
 
-        String queryCrearTablaLikesContacto = " CREATE TABLE " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS + "(" +
+        String queryCrearTablaLikesContacto = "CREATE TABLE " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS + "(" +
                 ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID_MASCOTA + " INTEGER, " +
-                ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_NUMERO_LIKES + "INTEGER, " +
-                " FOREIGN KEY (" + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID + ")" +
-                " REFERENCES " + ConstantesBaseDatos.TABLA_MASCOTAS + "(" + ConstantesBaseDatos.TABLA_MASCOTAS_ID + ")" +
+                ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_NUMERO_LIKES + " INTEGER, " +
+                "FOREIGN KEY (" + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID_MASCOTA + ") " +
+                "REFERENCES " + ConstantesBaseDatos.TABLA_MASCOTAS + "(" + ConstantesBaseDatos.TABLA_MASCOTAS_ID + ")" +
                 ")";
 
         db.execSQL(queryCrearTablaMascota);
@@ -60,6 +60,18 @@ public class BaseDatos extends SQLiteOpenHelper {
             mascotaActual.setNombreMascota(registros.getString(1));
             mascotaActual.setFoto(registros.getInt(2));
 
+            String queryLikes = "SELECT COUNT("+ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_NUMERO_LIKES+") as likes " +
+                    " FROM " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS +
+                    " WHERE " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID_MASCOTA + "=" + mascotaActual.getId();
+
+            Cursor regLikes = db.rawQuery(queryLikes,null);
+
+            if (regLikes.moveToNext()) {
+                mascotaActual.setLikes(regLikes.getInt(0));
+            } else {
+                mascotaActual.setLikes(0);
+            }
+
             mascotas.add(mascotaActual);
         }
         db.close();
@@ -71,4 +83,30 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.insert(ConstantesBaseDatos.TABLA_MASCOTAS, null, contentValues);
         db.close();
     }
+
+    public void insertarLikesMascota (ContentValues contentValues){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert(ConstantesBaseDatos.TABLA_LIKES_MASCOTAS,null,contentValues);
+        db.close();
+    }
+
+    public int obtenerLikesMascotas(Mascota mascota){
+        int likes = 0;
+
+        String query = "SELECT COUNT("+ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_NUMERO_LIKES+")" +
+                " FROM " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS +
+                " WHERE " + ConstantesBaseDatos.TABLA_LIKES_MASCOTAS_ID_MASCOTA + "="+mascota.getId();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor registros = db.rawQuery(query, null);
+
+        if (registros.moveToNext()){
+            likes = registros.getInt(0);
+        }
+
+        db.close();
+
+        return likes;
+    }
+
 }

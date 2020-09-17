@@ -4,12 +4,12 @@ public class Mascota {
     private int id;
     private int foto;
     private String nombreMascota;
-    private String likes;
+    private int likes = 0;
 
     public Mascota() {
     }
 
-    public Mascota(int foto, String nombreMascota, String likes) {
+    public Mascota(int foto, String nombreMascota, int likes) {
         this.foto = foto;
         this.nombreMascota = nombreMascota;
         this.likes = likes;
@@ -31,11 +31,11 @@ public class Mascota {
         this.nombreMascota = nombreMascota;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 
-    public void setLikes(String likes) {
+    public void setLikes(int likes) {
         this.likes = likes;
     }
 

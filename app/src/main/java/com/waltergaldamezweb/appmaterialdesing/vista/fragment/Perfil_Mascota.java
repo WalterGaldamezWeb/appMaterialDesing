@@ -38,7 +38,7 @@ public class Perfil_Mascota extends Fragment {
         listaMascotas.setLayoutManager(glm);
         inicializarListaMascotas();
         inicializarAdaptador();
-        tvNombrePerfil.setText(mascotas.get(2).getNombreMascota().toString());
+        tvNombrePerfil.setText(mascotas.get(2).getNombreMascota());
 
 
         return v;
@@ -51,15 +51,15 @@ public class Perfil_Mascota extends Fragment {
     public void inicializarListaMascotas () {
         //likes = String.valueOf(contadorLikes);
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
         /*mascotas.add(new Mascota(R.drawable.peludo,"Peludo","2"));
         mascotas.add(new Mascota(R.drawable.labradores,"Labradores","5"));
         mascotas.add(new Mascota(R.drawable.perrote,"Perrote","8"));

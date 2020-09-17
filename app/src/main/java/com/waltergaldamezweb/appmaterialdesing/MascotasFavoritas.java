@@ -43,11 +43,11 @@ public class MascotasFavoritas extends AppCompatActivity {
 
     public void inicializarListaMascotas () {
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(R.drawable.gato,"gato","5"));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","15"));
-        mascotas.add(new Mascota(R.drawable.labradores,"Labradores","5"));
-        mascotas.add(new Mascota(R.drawable.perrote,"Perrote","8"));
-        mascotas.add(new Mascota(R.drawable.labrador_adulto,"Labrador Adulto","12"));
+        mascotas.add(new Mascota(R.drawable.gato,"gato",5));
+        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",15));
+        mascotas.add(new Mascota(R.drawable.labradores,"Labradores",5));
+        mascotas.add(new Mascota(R.drawable.perrote,"Perrote",8));
+        mascotas.add(new Mascota(R.drawable.labrador_adulto,"Labrador Adulto",12));
         /*mascotas.add(new Mascota(R.drawable.gato,"Gato","5"));
         mascotas.add(new Mascota(R.drawable.manchado,"Manchado","7"));
         mascotas.add(new Mascota(R.drawable.pitbull,"Pitbull","1"));

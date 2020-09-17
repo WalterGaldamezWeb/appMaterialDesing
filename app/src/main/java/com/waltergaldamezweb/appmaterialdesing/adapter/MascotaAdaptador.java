@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.waltergaldamezweb.appmaterialdesing.R;
+import com.waltergaldamezweb.appmaterialdesing.modelo.ConstructorMascotas;
 import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
 
 import java.util.ArrayList;
@@ -41,16 +42,20 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         final Mascota mascota = mascotas.get(position);
         holder.imgCardView.setImageResource(mascota.getFoto());
         holder.tvNombre.setText(mascota.getNombreMascota());
-        holder.tvLikes.setText(mascota.getLikes());
+        holder.tvLikes.setText(String.valueOf(mascota.getLikes()));
+
 
         holder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int likeRecibidos = Integer.parseInt(mascota.getLikes());
+                /*int likeRecibidos = Integer.parseInt(mascota.getLikes());
                 int totalLikes = likeRecibidos + 1;
                 mascota.setLikes(String.valueOf(totalLikes));
-                holder.tvLikes.setText(mascota.getLikes());
+                holder.tvLikes.setText(mascota.getLikes());*/
                 Toast.makeText(contexto,"Like a : " + mascota.getNombreMascota() , Toast.LENGTH_SHORT).show();
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(contexto);
+                constructorMascotas.darLikeMascota(mascota);
+                holder.tvLikes.setText(String.valueOf(constructorMascotas.obtenerLikesMascota(mascota)));
             }
         });
 

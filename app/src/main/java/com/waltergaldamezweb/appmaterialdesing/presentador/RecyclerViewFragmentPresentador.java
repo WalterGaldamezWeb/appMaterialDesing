@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.waltergaldamezweb.appmaterialdesing.vista.fragment.IRecyclerViewMascota;
 import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
-import com.waltergaldamezweb.appmaterialdesing.database.ConstructorMascotas;
+import com.waltergaldamezweb.appmaterialdesing.modelo.ConstructorMascotas;
 
 import java.util.ArrayList;
 

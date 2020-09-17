@@ -36,7 +36,7 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     public void onBindViewHolder(@NonNull final PerfilAdaptador.PerfilViewHolder holder, int position) {
         final Mascota mascota = mascotas.get(position);
         holder.imgCardView.setImageResource(mascota.getFoto());
-        holder.tvLikes.setText(mascota.getLikes());
+        holder.tvLikes.setText(String.valueOf(mascota.getLikes()));
     }
 
     @Override
