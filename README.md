@@ -17,6 +17,11 @@ Aplicaión de mascotas android Material Desing.
 11. ViewPager
 12. CircularView
 13. JavaMail
+14. MVC Modelo Vista Controlador
+
+#### Tercera Versión
+15. MVP Modelo Vista Presentador
+16. Base de Datos SQLite
 
 ## 🎨 Vista Previa
 
