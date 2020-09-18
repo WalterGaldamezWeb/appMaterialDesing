@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.waltergaldamezweb.appmaterialdesing.R;
 import com.waltergaldamezweb.appmaterialdesing.adapter.PerfilAdaptador;
+import com.waltergaldamezweb.appmaterialdesing.modelo.ConstructorMascotas;
 import com.waltergaldamezweb.appmaterialdesing.modelo.Mascota;
 
 import java.util.ArrayList;
@@ -24,10 +25,11 @@ public class Perfil_Mascota extends Fragment {
     ArrayList<Mascota> mascotas;
     public RecyclerView listaMascotas;
     TextView tvNombrePerfil;
+    private ConstructorMascotas constructorMascotas;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
+
         View v = inflater.inflate(R.layout.fragment_perfil__mascota, container,false);
 
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvPerfilMascota);
@@ -38,8 +40,9 @@ public class Perfil_Mascota extends Fragment {
         listaMascotas.setLayoutManager(glm);
         inicializarListaMascotas();
         inicializarAdaptador();
-        tvNombrePerfil.setText(mascotas.get(2).getNombreMascota());
 
+        //tvNombrePerfil.setText(mascotas.get(2).getNombreMascota());
+        tvNombrePerfil.setText("Gato Y Perro");
 
         return v;
     }
@@ -49,24 +52,8 @@ public class Perfil_Mascota extends Fragment {
     }
 
     public void inicializarListaMascotas () {
-        //likes = String.valueOf(contadorLikes);
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro",5));
-        /*mascotas.add(new Mascota(R.drawable.peludo,"Peludo","2"));
-        mascotas.add(new Mascota(R.drawable.labradores,"Labradores","5"));
-        mascotas.add(new Mascota(R.drawable.perrote,"Perrote","8"));
-        mascotas.add(new Mascota(R.drawable.labrador_adulto,"Labrador Adulto","12"));
-        mascotas.add(new Mascota(R.drawable.gato,"Gato","5"));
-        mascotas.add(new Mascota(R.drawable.manchado,"Manchado","7"));
-        mascotas.add(new Mascota(R.drawable.pitbull,"Pitbull","1"));
-        mascotas.add(new Mascota(R.drawable.leon,"León","8"));*/
+        constructorMascotas = new ConstructorMascotas(getContext());
+        mascotas = constructorMascotas.obtenerPerfil();
     }
 }

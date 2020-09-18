@@ -48,10 +48,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         holder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*int likeRecibidos = Integer.parseInt(mascota.getLikes());
-                int totalLikes = likeRecibidos + 1;
-                mascota.setLikes(String.valueOf(totalLikes));
-                holder.tvLikes.setText(mascota.getLikes());*/
                 Toast.makeText(contexto,"Like a : " + mascota.getNombreMascota() , Toast.LENGTH_SHORT).show();
                 ConstructorMascotas constructorMascotas = new ConstructorMascotas(contexto);
                 constructorMascotas.darLikeMascota(mascota);

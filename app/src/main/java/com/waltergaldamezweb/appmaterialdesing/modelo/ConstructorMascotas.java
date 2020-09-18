@@ -22,7 +22,7 @@ public class ConstructorMascotas {
         this.context = context;
     }
 
-    public ArrayList<Mascota> obteberDatos(){
+    public ArrayList<Mascota> obtenerDatos(){
         /*mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota(R.drawable.gato_perro,"Gato Y Perro","5"));
         mascotas.add(new Mascota(R.drawable.peludo,"Peludo","2"));
@@ -40,6 +40,16 @@ public class ConstructorMascotas {
         return db.obtenerTodasMacotas();
     }
 
+    public ArrayList<Mascota> obtenerFavorita(){
+        BaseDatos db = new BaseDatos(context);
+        return db.obtenerTodasMacotasFavoritas();
+    }
+
+    public ArrayList<Mascota> obtenerPerfil(){
+        BaseDatos db = new BaseDatos(context);
+        return db.obtenerPerfil();
+    }
+
     public void insertarTresMascotas(BaseDatos db){
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Gato Y Perro");
@@ -55,6 +65,38 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Labradores");
         contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.labradores);
         db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Perrote");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.perrote);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Labrador Adulto");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.labrador_adulto);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Gato");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.gato);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Pitbull");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.pitbull);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "Manchado");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.manchado);
+        db.insertarMascota(contentValues);
+
+        contentValues = new ContentValues();
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_NOMBRE, "León");
+        contentValues.put(ConstantesBaseDatos.TABLA_MASCOTAS_FOTO, R.drawable.leon);
+        db.insertarMascota(contentValues);
+
+
     }
 
     public void darLikeMascota (Mascota mascota) {
